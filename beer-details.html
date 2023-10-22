@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer Details</title>
+    <link rel="stylesheet" href="beer-details.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Beer Details</h1>
+        <div>
+            <h3>Name:</h3>
+            <p id="beerName"></p>
+        </div>
+        <div>
+            <h3>Tagline:</h3>
+            <p id="beerTagline"></p>
+        </div>
+        <div>
+            <h3>Description:</h3>
+            <p id="beerDescription"></p>
+        </div>
+    </div>
+    <script>
+        // Parse query parameters and populate beer details
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("beerName").textContent = urlParams.get("beerName");
+        document.getElementById("beerTagline").textContent = urlParams.get("beerTagline");
+        document.getElementById("beerDescription").textContent = urlParams.get("beerDescription");
+    </script>
+</body>
+</html>
